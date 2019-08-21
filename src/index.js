@@ -19,8 +19,8 @@ app.use(middlewares.handleErrors);
 // Catch 404 and forward to error handlers
 app.use((req, res, next) => {
     const err = new Error('Not Found');
-    err.status = NOT_FOUND_STATUS_CODE;
-    next(err);
+    res.statusCode = NOT_FOUND_STATUS_CODE;
+    res.send(err.message);
 });
 
 app.get('/', (req, res) => res.json({message: 'Hello World!'}));
