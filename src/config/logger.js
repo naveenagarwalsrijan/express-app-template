@@ -15,12 +15,14 @@ const logger = {
       )
     });
 
-    global.logger.add(new transports.Console({
-      format: format.combine(
-        format.colorize(),
-        format.simple()
-      )
-    }));
+    if (process.env.ENVIRONMENT !== 'test') {
+      global.logger.add(new transports.Console({
+        format: format.combine(
+          format.colorize(),
+          format.simple()
+        )
+      }));
+    }
   },
 };
 
