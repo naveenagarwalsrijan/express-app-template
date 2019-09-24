@@ -2,29 +2,48 @@ const fs = require('fs');
 
 module.exports = {
   development: {
-    username: 'postgres',
-    password: 'abc123456',
-    database: 'database_development',
-    host: 'contianer-psql',
-    dialect: 'postgres'
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: process.env.DB_DIALECT
   },
-  test: {
-    username: 'database_test',
-    password: null,
-    database: 'database_test',
-    host: '127.0.0.1',
-    dialect: 'postgres'
+  stage: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: process.env.DB_DIALECT
+  },
+  uat: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: process.env.DB_DIALECT
   },
   production: {
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
     database: process.env.DB_NAME,
-    host: process.env.DB_HOSTNAME,
-    dialect: 'postgres',
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: process.env.DB_DIALECT,
     // dialectOptions: {
     //   ssl: {
     //     ca: fs.readFileSync(__dirname + '/mysql-ca-master.crt')
     //   }
     // }
+  },
+  test: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: process.env.DB_DIALECT
   }
 };
