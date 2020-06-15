@@ -1,5 +1,4 @@
-FROM 806860399886.dkr.ecr.us-east-1.amazonaws.com/nodejs:10.16.1
-
+FROM node:latest
 RUN mkdir /server
 
 # clean up tmp files (we don't need them for the image)
