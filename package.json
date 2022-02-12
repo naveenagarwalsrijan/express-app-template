@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/naveenagarwalsrijan/express-app-template#readme",
   "dependencies": {
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "bluebird": "^3.5.5",
     "body-parser": "^1.19.0",
     "core-decorators": "^0.20.0",
